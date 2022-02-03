@@ -6,7 +6,7 @@ Visit the [website](https://mahesh-panchal.github.io/reproducible-research/) for
 
 Play with this demo in Gitpod.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/mahesh-panchal/reproducible-research)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/sateeshperi/reproducible-research.git)
 
 ## About
 
