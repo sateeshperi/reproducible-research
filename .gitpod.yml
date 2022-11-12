@@ -1,16 +1,26 @@
 
 tasks:
   - name: Setup Rocker Containers
-    init: docker-compose pull
+    init: UID=$(UID) docker-compose -f rstudio-docker-compose.yml -f jupyter-docker-compose.yml pull
   - name: Install Nextflow
-    init: curl -s https://get.nextflow.io | bash
-    command: sudo mv nextflow /usr/local/bin
+    command: |
+      curl -s https://get.nextflow.io | bash
+      sudo mv nextflow /usr/local/bin
+  - name: Install Quarto
+    command: |
+      wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.1.168/quarto-1.1.168-linux-amd64.deb
+      sudo dpkg -i quarto-1.1.168-linux-amd64.deb
+      rm quarto-1.1.168-linux-amd64.deb
 
 ports:
   # Expose port for RStudio
   - port: 8787
     onOpen: open-browser
+# Expose port for Jupyter
+  - port: 8888
+    onOpen: open-browser
 
 vscode:
   extensions:
     - ritwickdey.liveserver
+    - quarto.quarto
